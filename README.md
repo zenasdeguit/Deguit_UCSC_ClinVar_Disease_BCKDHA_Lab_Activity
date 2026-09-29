@@ -50,9 +50,6 @@ The **UCSC Genome Browser** was used to locate BCKDHA in the human genome.
 
 The BCKDHA gene was located on chromosome 19 in the 19q13.2 region. The gene spans approximately 27 kb in the GRCh38 assembly.
 
-### Screenshot 1 — Gene Location
-
-![Screenshot 1 - BCKDHA gene location in UCSC](images/01_gene_location.png)
 
 ---
 
@@ -78,9 +75,6 @@ An **exon** is a region of a gene that is retained in the mature RNA transcript.
 
 An **intron** is a region located between exons that is removed from the pre-mRNA during RNA processing. Introns therefore separate the exon regions in the genomic sequence.
 
-### Screenshot 2 — BCKDHA Gene Structure
-
-![Screenshot 2 - BCKDHA exon-intron structure](images/02_gene_structure.png)
 
 ---
 
@@ -115,9 +109,6 @@ The selected variant position is within a region where the reference base is sho
 
 Strong conservation can suggest that a sequence region has been maintained across species because it may have an important biological function. However, conservation alone does not prove that a particular variant causes disease.
 
-### Screenshot 3 — UCSC Annotation Tracks
-
-![Screenshot 3 - BCKDHA with ClinVar and conservation tracks](images/03_tracks.png)
 
 ---
 
@@ -167,9 +158,6 @@ Therefore, the predicted protein-level change is:
 
 The substitution does not change the overall number of nucleotides in the CDS and does not create a frameshift.
 
-### Screenshot 4 — ClinVar Record
-
-![Screenshot 4 - NCBI ClinVar record for BCKDHA c.929C>G](images/04_ClinVar_Record.png)
 
 ### ClinVar Record Link
 
@@ -197,9 +185,6 @@ The position corresponds to the region associated with **T310** in the BCKDHA tr
 
 Based on the transcript annotation and the amino-acid designation, the variant is located in the **coding portion of the BCKDHA transcript** rather than an intronic region.
 
-### Screenshot 5 — Selected Variant in UCSC
-
-![Screenshot 5 - BCKDHA c.929C>G located in UCSC](images/05_variant_in_UCSC.png)
 
 ---
 
