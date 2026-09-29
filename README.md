@@ -2,569 +2,328 @@
 
 ## Project Overview
 
-This repository contains the sequence-analysis work for the Cell and Molecular Biology Laboratory activities involving **Maple Syrup Urine Disease (MSUD)** and the **BCKDHA** gene.
+This project investigates **Maple Syrup Urine Disease (MSUD)** and the **BCKDHA** gene. The analysis examines a normal BCKDHA sequence, a documented disease-associated mutation, and a student-created artificial mutation.
 
-The project examines the normal BCKDHA coding sequence, a documented disease-associated mutation, and a student-created artificial mutation. The sequence analysis was performed using **NCBI**, **Galaxy**, **SeqKit Translate**, the **UCSC Genome Browser**, and **NCBI ClinVar**.
-
-The main goal of the activity was to connect a DNA sequence change to its predicted protein consequence and to examine where a clinically reported variant is located in the human genome.
+The project used **NCBI, Galaxy, SeqKit Translate, UCSC Genome Browser, and ClinVar** to connect DNA sequence changes with predicted protein effects and genomic location.
 
 ---
 
-# 1. Assigned Gene and Disease
+## 1. Disease and Gene
 
-## Maple Syrup Urine Disease (MSUD)
+### Maple Syrup Urine Disease (MSUD)
 
-Maple Syrup Urine Disease (MSUD) is an inherited metabolic disorder associated with impaired breakdown of the branched-chain amino acids **leucine, isoleucine, and valine**. Their metabolites can accumulate in the body and may affect the nervous system.
+Maple Syrup Urine Disease is an inherited metabolic disorder that affects the breakdown of the branched-chain amino acids **leucine, isoleucine, and valine**. MSUD is inherited in an **autosomal recessive** pattern.
 
-MSUD is inherited in an **autosomal recessive** pattern.
+### BCKDHA
 
-## BCKDHA
-
-- **Official gene symbol:** BCKDHA
-- **Full gene/protein description:** 2-oxoisovalerate dehydrogenase subunit alpha, mitochondrial isoform 1 precursor
+- **Gene:** BCKDHA
 - **Chromosome:** 19
-- **Cytogenetic location:** 19q13.2
+- **Location:** 19q13.2
 - **Reference transcript:** NM_000709.4
 - **Reference protein:** NP_000700.1
-- **Genome assembly used for UCSC:** GRCh38/hg38
+- **Protein:** 2-oxoisovalerate dehydrogenase subunit alpha
 
-BCKDHA encodes the alpha subunit of the E1 component of the branched-chain alpha-ketoacid dehydrogenase (BCKD) complex. This mitochondrial enzyme complex is involved in the metabolism of branched-chain amino acids.
+BCKDHA encodes the alpha subunit of the E1 component of the branched-chain alpha-ketoacid dehydrogenase complex.
 
 ---
 
-# 2. UCSC Gene Location
+## 2. Objectives
 
-The **UCSC Genome Browser** was used to locate BCKDHA in the human genome.
+The project aimed to:
 
-### Genome Browser Information
+1. Obtain the BCKDHA wild-type CDS.
+2. Translate the WT CDS into a protein sequence.
+3. Analyze a documented BCKDHA mutation.
+4. Create an artificial mutation.
+5. Compare the resulting sequences and proteins.
+6. Locate the documented variant using UCSC.
+7. Examine ClinVar and conservation information.
+
+---
+
+# 3. Galaxy Sequence Analysis
+
+## Wild-Type Sequence
+
+The BCKDHA WT coding sequence was obtained from NCBI RefSeq.
 
 | Feature | Result |
 |---|---|
-| Gene | BCKDHA |
-| Genome assembly | GRCh38/hg38 |
-| Chromosome | chr19 |
-| Cytogenetic region | 19q13.2 |
-| Approximate genomic coordinates | chr19:41,397,818–41,425,002 |
-| Approximate gene size | 27.2 kb |
-| Strand | Negative (-) |
-
-The BCKDHA gene was located on chromosome 19 in the 19q13.2 region. The gene spans approximately 27 kb in the GRCh38 assembly.
-
-
----
-
-# 3. Exons, Introns, and Transcripts
-
-The UCSC Genome Browser was used to examine the structure of the BCKDHA gene.
-
-The **NCBI RefSeq** and **GENCODE** annotation tracks showed multiple transcript representations of BCKDHA. Different horizontal gene models can represent different transcripts or isoforms.
-
-For the selected BCKDHA transcript, **NM_000709.4**, the gene structure contains **9 identifiable exons**.
-
-### Observations
-
-- Multiple BCKDHA transcript models are visible in UCSC.
-- Exons are represented as blocks or boxes.
-- Introns are represented by connecting lines between exon regions.
-- The intronic regions are generally much longer than the exon regions.
-- Different transcripts can have differences in exon boundaries or transcript structure.
-
-### Exon vs. Intron
-
-An **exon** is a region of a gene that is retained in the mature RNA transcript. In protein-coding genes, coding portions of exons contain the information used to determine the amino-acid sequence.
-
-An **intron** is a region located between exons that is removed from the pre-mRNA during RNA processing. Introns therefore separate the exon regions in the genomic sequence.
-
-
----
-
-# 4. UCSC Annotation Tracks
-
-After locating BCKDHA, additional annotation tracks were enabled in the UCSC Genome Browser.
-
-The main tracks examined were:
-
-- GENCODE
-- NCBI RefSeq
-- ClinVar Short Nucleotide Variants <50bp
-- OMIM Alleles
-- OMIM Genes
-- GTEx gene expression
-- UCSC 100 Vertebrates conservation
-- Multiz Alignments of 100 Vertebrates
-
-## ClinVar Track
-
-The **ClinVar Short Nucleotide Variants <50bp** track was enabled to display clinically reported small variants in the genomic region.
-
-ClinVar-related variant marks were visible within the BCKDHA region. Because many variants can occur in a gene, the specific disease-associated variant was selected first from NCBI ClinVar and was then located in UCSC using its genomic coordinate.
-
-## Conservation Track
-
-The **UCSC 100 Vertebrates** conservation track was also enabled.
-
-The browser displayed a **100 vertebrates Basewise Conservation by PhyloP** track and a **Multiz Alignments of 100 Vertebrates** track. The conservation signal varied across the displayed region, indicating that some positions are more conserved across species than others.
-
-The selected variant position is within a region where the reference base is shown as **C** in the conservation/alignment view.
-
-Strong conservation can suggest that a sequence region has been maintained across species because it may have an important biological function. However, conservation alone does not prove that a particular variant causes disease.
-
-
----
-
-# 5. Selected ClinVar Variant
-
-One clinically reported BCKDHA variant was selected from **NCBI ClinVar**.
-
-### Selected Variant
-
-| Feature | Result |
-|---|---|
-| Gene | BCKDHA |
-| HGVS cDNA description | NM_000709.4:c.929C>G |
-| Protein change | NP_000700.1:p.Thr310Arg |
-| Short protein notation | p.Thr310Arg (T310R) |
-| Variant type | Single nucleotide variant |
-| Molecular consequence | Missense |
-| ClinVar Variation ID | 2381 |
-| VCV accession shown in record | VCV000002381.14 |
-| Chromosome | chr19 |
-| GRCh38 genomic position | 41,422,704 |
-| GRCh38 genomic HGVS | NC_000019.10:g.41422704C>G |
-| Clinical significance | Pathogenic/Likely pathogenic |
-| Associated disease | Maple Syrup Urine Disease (MSUD) |
-
-The ClinVar record identifies the nucleotide substitution as **c.929C>G** and the resulting amino-acid substitution as **p.Thr310Arg**.
-
-The variant is a missense variant because a single nucleotide substitution changes the encoded amino acid.
-
-### Mutation Interpretation
-
-The coding change can be represented as:
-
-**c.929C>G**
-
-This changes the codon:
-
-**ACA → AGA**
-
-The codon change results in:
-
-**Thr (T) → Arg (R)**
-
-Therefore, the predicted protein-level change is:
-
-**p.Thr310Arg (T310R)**
-
-The substitution does not change the overall number of nucleotides in the CDS and does not create a frameshift.
-
-
-### ClinVar Record Link
-
-NCBI ClinVar:
-
-https://www.ncbi.nlm.nih.gov/clinvar/variation/2381/
-
----
-
-# 6. Locating the Variant in UCSC
-
-The selected ClinVar variant was then located in the UCSC Genome Browser using the GRCh38 genomic coordinate:
-
-**chr19:41,422,704**
-
-The UCSC search was performed using the variant position so that the exact nucleotide could be examined in relation to the BCKDHA gene model.
-
-The browser displayed:
-
-**chr19:41,422,704–41,422,704**
-
-The BCKDHA transcript and the variant position were visible together. The browser also showed the ClinVar-related track, RefSeq/GENCODE annotations, and the conservation tracks.
-
-The position corresponds to the region associated with **T310** in the BCKDHA transcript. This is consistent with the ClinVar HGVS description **c.929C>G (p.Thr310Arg)**.
-
-Based on the transcript annotation and the amino-acid designation, the variant is located in the **coding portion of the BCKDHA transcript** rather than an intronic region.
-
-
----
-
-# 7. Interpretation
-
-## Where is the variant located relative to the gene?
-
-The selected variant is located within the genomic region occupied by the **BCKDHA** gene on chromosome 19. In GRCh38, the variant is located at **chr19:41,422,704**.
-
-## Is the variant in an exon, intron, UTR, or another region?
-
-The variant corresponds to the coding position **c.929** of the BCKDHA transcript and produces the protein substitution **p.Thr310Arg**. Therefore, it is associated with the coding portion of the transcript rather than an intronic region.
-
-## Is the variant likely in a coding or non-coding region?
-
-The variant is in a **coding region** because the ClinVar record provides a protein consequence, **p.Thr310Arg**, and identifies it as a missense variant.
-
-## How might the variant affect the gene or gene product?
-
-The c.929C>G substitution changes the codon from **ACA to AGA**, replacing threonine with arginine at amino-acid position 310. Although the overall predicted protein length remains 445 amino acids, changing one amino acid can potentially influence protein structure, stability, interactions, or activity depending on the position and properties of the substituted residues.
-
-ClinVar provides clinical classification information for this variant, but genomic location and computational sequence analysis alone do not establish the complete biological mechanism.
-
-## What additional evidence is needed before concluding that the variant causes disease?
-
-Additional evidence can include clinical observations, segregation studies, population-frequency data, functional experiments, protein studies, and other independent genetic or biochemical evidence. These types of evidence help determine whether the sequence change actually affects BCKDHA function and contributes to the MSUD phenotype.
-
----
-
-# 8. UCSC and ClinVar Activity Summary
-
-The UCSC Genome Browser and NCBI ClinVar provided complementary information.
-
-UCSC was used to examine the physical genomic location, gene structure, transcripts, clinical variant tracks, and conservation across species. ClinVar was used to identify the selected clinically reported variant and obtain its HGVS description, genomic position, protein consequence, and clinical classification.
-
-The two resources were connected by using the GRCh38 coordinate from ClinVar to return to the exact position in UCSC.
-
-The overall relationship can be summarized as:
-
-**BCKDHA gene → c.929C>G nucleotide change → ACA→AGA codon change → p.Thr310Arg protein change → possible effect on BCKDHA function**
-
----
-
-# 9. Short Reflection
-
-## 1. What did UCSC show about your gene that was not obvious from simply reading about its function?
-
-UCSC showed the physical organization of the BCKDHA gene in the human genome, including its chromosome location, exon-intron structure, and multiple transcript models. It also showed clinical variant information and conservation across many vertebrate species, which cannot be understood from gene function alone.
-
-## 2. Why is knowing the exact genomic location of a disease-associated variant useful?
-
-Knowing the exact genomic location makes it possible to connect a variant to a specific gene, transcript, exon, and coding region. It also allows the variant to be compared with genome annotations, conservation information, and other known variants.
-
-## 3. What is one limitation of predicting a variant's effect only from its genomic location?
-
-Genomic location alone does not show exactly how a variant changes protein structure or biological activity. A variant may be located in a coding region but have a small effect, while other variants can affect gene expression or RNA processing without changing the protein sequence.
-
-## 4. What was the most interesting feature you observed about your assigned gene?
-
-One interesting feature was that the UCSC Genome Browser showed several BCKDHA transcript models and allowed the gene structure to be examined at the same time as clinical variant and conservation information. It was also useful to see how the exact ClinVar variant could be connected to a specific position within the BCKDHA gene.
-
----
-
-# 10. Galaxy Sequence Analysis
-
-The WT BCKDHA coding sequence was obtained from **NCBI RefSeq** and used as the reference sequence for the Galaxy analysis.
-
-### WT Sequence Information
-
-| Feature | Result |
-|---|---|
-| Gene | BCKDHA |
-| Reference transcript | NM_000709.4 |
-| Reference protein | NP_000700.1 |
-| Sequence type | Coding DNA sequence (CDS) |
+| Transcript | NM_000709.4 |
+| Protein | NP_000700.1 |
 | CDS length | 1,338 bp |
-| Organism | *Homo sapiens* |
-| Start codon | ATG |
-| Stop codon | TGA |
+| Protein length | 445 aa |
 | Reading frame | Frame 1 |
+| Genetic code | Standard |
 
-The original WT CDS was kept unchanged and used as the reference for the mutation analysis.
+The WT CDS was translated using **SeqKit Translate** in Galaxy.
 
----
-
-# 11. WT Translation
-
-The WT BCKDHA CDS was translated using **SeqKit Translate** in Galaxy.
-
-### Translation Settings
-
-- Genetic code: Standard
-- Reading frame: Frame 1
-- Translate initial codon to M: Yes
-
-### Results
-
-- CDS length: **1,338 bp**
-- Predicted protein length: **445 amino acids**
-- Start codon: **ATG**
-- Stop codon: **TGA**
-- First 10 amino acids: `MAVAIAAARV`
-- Last 10 amino acids: `EHYPLDHFDK`
-
-**Output:** `MSUD_protein.fasta`
+**WT protein:** `MSUD_protein.fasta`
 
 ---
 
-# 12. Documented Mutation
+## Documented Mutation
 
-The documented BCKDHA mutation analyzed in the Galaxy sequence experiment was:
+The documented BCKDHA mutation analyzed was:
 
 **NM_000709.4:c.929C>G (p.Thr310Arg)**
 
-### Mutation Details
+The nucleotide substitution changes:
+
+**ACA → AGA**
+
+This results in:
+
+**Thr310 → Arg310 (T310R)**
 
 | Feature | Result |
 |---|---|
-| Gene | BCKDHA |
-| Reference transcript | NM_000709.4 |
-| Reference protein | NP_000700.1 |
-| Nucleotide change | C → G at c.929 |
-| Codon change | ACA → AGA |
-| Amino-acid change | Thr310 → Arg310 (T310R) |
 | Mutation type | Missense |
-| Nucleotides affected | 1 bp |
+| Nucleotide change | C → G |
+| Codon change | ACA → AGA |
+| Protein change | T310R |
 | CDS length | 1,338 bp |
-| Predicted protein length | 445 aa |
+| Protein length | 445 aa |
 | Frameshift | No |
 | Premature stop | No |
 
-The documented mutation was introduced into a copy of the WT CDS so that the original WT sequence remained unchanged.
-
 **Documented mutant CDS:** `MSUD_BCKDHA_c929C_G_mutant.fasta`
 
----
-
-# 13. Documented Mutant Translation
-
-The documented mutant CDS was translated using the same SeqKit Translate settings as the WT sequence.
-
-### Results
-
-- Mutant CDS length: **1,338 bp**
-- Predicted mutant protein length: **445 aa**
-- Amino-acid change: **T310 → R310**
-- Premature stop codon: **Absent**
-- Reading-frame change: **None**
-
-The WT and documented mutant proteins therefore have the same overall length, with the predicted difference being the **T310R substitution**.
-
-**Output:** `MSUD_mutant_protein.fasta`
+**Documented mutant protein:** `MSUD_mutant_protein.fasta`
 
 ---
 
-# 14. Artificial Mutation
+## Artificial Mutation
 
-A student-created artificial single-nucleotide substitution was introduced into a copy of the WT BCKDHA CDS.
+The student-created mutation was:
 
-**Artificial mutation: c.303G>A**
+**c.303G>A**
 
-The nucleotide change converted:
+The codon changes:
 
 **AAG → AAA**
 
-Both codons encode lysine (K), so the artificial mutation was predicted to be **synonymous**.
-
-### Artificial Mutation Information
+Both codons encode lysine (K), making this a **synonymous mutation**.
 
 | Feature | Result |
 |---|---|
-| Gene | BCKDHA |
-| Reference transcript | NM_000709.4 |
-| Mutation type | Single-nucleotide substitution |
-| Nucleotide position | c.303 |
 | Nucleotide change | G → A |
 | Codon change | AAG → AAA |
-| Predicted amino-acid change | K → K |
-| Predicted mutation type | Synonymous |
-| Predicted frameshift | No |
-| Predicted premature stop | No |
-| Predicted protein length | 445 aa |
+| Amino-acid change | K → K |
+| Mutation type | Synonymous |
+| Frameshift | No |
+| Premature stop | No |
+| Protein length | 445 aa |
 
 **Artificial mutant CDS:** `MSUD_BCKDHA_artificial_c303G_A.fasta`
 
----
-
-# 15. Artificial Mutant Translation
-
-The artificial mutant CDS was translated using the same SeqKit Translate settings.
-
-**Output:** `MSUD_artificial_mutant_protein.fasta`
-
-### Results
-
-- CDS length: **1,338 bp**
-- Predicted protein length: **445 aa**
-- Amino-acid substitution: **None**
-- Reading-frame change: **None**
-- Premature stop codon: **No**
-
-The artificial mutation did not change the predicted amino-acid sequence because both **AAG** and **AAA** encode lysine.
+**Artificial mutant protein:** `MSUD_artificial_mutant_protein.fasta`
 
 ---
 
-# 16. WT Versus Mutant Protein Comparison
+## Sequence Comparison
 
 | Feature | WT | Documented Mutation | Artificial Mutation |
 |---|---|---|---|
 | CDS length | 1,338 bp | 1,338 bp | 1,338 bp |
 | Protein length | 445 aa | 445 aa | 445 aa |
 | Mutation | None | c.929C>G | c.303G>A |
-| Codon change | ACA | ACA → AGA | AAG → AAA |
-| Mutation type | N/A | Missense | Synonymous |
-| Reading frame changed? | No | No | No |
-| Premature stop? | No | No | No |
-| Amino acids affected | None | T310 → R310 | None |
-| Predicted protein-length change | None | None | None |
+| Codon change | — | ACA → AGA | AAG → AAA |
+| Protein change | — | T310R | K → K |
+| Mutation type | — | Missense | Synonymous |
 
-The documented and artificial mutations are both single-nucleotide substitutions, but they have different predicted protein-level consequences.
-
-The documented **c.929C>G** substitution changes **ACA to AGA**, resulting in the amino-acid substitution **T310R**.
-
-The artificial **c.303G>A** substitution changes **AAG to AAA**, but both codons encode lysine. Therefore, no amino-acid change is predicted for the artificial mutation.
+The documented mutation changes one amino acid, while the artificial mutation does not change the predicted amino-acid sequence.
 
 ---
 
-# 17. Molecular Interpretation
+# 4. UCSC Genome Browser and ClinVar
 
-The documented **c.929C>G** variant changes one nucleotide in the BCKDHA coding sequence and produces the predicted **Thr310Arg** substitution.
+## BCKDHA Gene Location
 
-The computational analysis shows that the mutation does not change the length of the coding sequence, does not shift the reading frame, and does not introduce a premature stop codon. Instead, its predicted protein-level effect is a single amino-acid substitution.
+The BCKDHA gene was located in the **GRCh38/hg38** human genome assembly on chromosome 19 at approximately **chr19:41,397,818–41,425,002**.
 
-Because BCKDHA encodes a component of the BCKD complex, changes that reduce normal BCKD complex function can interfere with the metabolism of branched-chain amino acids.
+### Figure 1. BCKDHA Gene Location
 
-The computational workflow establishes the sequence-level relationship:
+![Figure 1. BCKDHA gene location](Image/01_gene_location.png)
 
-**DNA substitution → codon change → amino-acid substitution**
-
-However, computational sequence analysis alone cannot demonstrate the complete biochemical or clinical effect of the mutation. Experimental and clinical evidence are needed to establish effects on protein stability, complex assembly, enzyme activity, and disease phenotype.
+This figure shows the location of the **BCKDHA** gene in the human genome using the GRCh38/hg38 assembly. The gene is located on chromosome 19 in the 19q13.2 region. The UCSC Genome Browser provides the genomic coordinates and allows the BCKDHA region to be examined together with different gene and genome annotations.
 
 ---
 
-# 18. Galaxy History
+## BCKDHA Gene Structure
 
-### Galaxy History
+The UCSC Genome Browser was used to examine the BCKDHA transcript and exon-intron structure.
 
-`Deguit_MSUD_BCKDHA_Mutation_Lab`
+### Figure 2. BCKDHA Gene Structure
 
-### Relevant Files
+![Figure 2. BCKDHA gene structure](Image/02_gene_structure.png)
 
-| File | Filename | Purpose |
-|---|---|---|
-| File 1 | `MSUD_CDS.fasta.txt` | WT BCKDHA CDS |
-| File 3 | `MSUD_protein.fasta` | Predicted WT protein |
-| File 5 | `MSUD_BCKDHA_c929C_G_mutant.fasta` | Documented mutant CDS |
-| File 6 | `MSUD_mutant_protein.fasta` | Predicted documented mutant protein |
-| File 7 | `MSUD_BCKDHA_artificial_c303G_A.fasta` | Student-created artificial mutant CDS |
-| File 8 | `MSUD_artificial_mutant_protein.fasta` | Predicted artificial mutant protein |
-
-File 4 was an intermediate working copy and was deleted after the documented mutant sequence was produced.
+This figure shows the structure of the **BCKDHA** gene in the UCSC Genome Browser. The gene models display the transcript structure and the arrangement of exon and intron regions. Multiple transcript annotations are visible, including RefSeq and GENCODE models, allowing the structure of BCKDHA to be examined in greater detail.
 
 ---
 
-# 19. Reproducibility
+## ClinVar and Conservation Tracks
 
-The overall workflow was:
+The **ClinVar Short Nucleotide Variants** track and **UCSC 100 Vertebrates** conservation tracks were enabled.
 
-1. Obtain the BCKDHA WT CDS from NCBI RefSeq.
-2. Preserve the original WT sequence.
-3. Upload the WT CDS to Galaxy.
-4. Translate the WT CDS using SeqKit Translate.
-5. Create a copy of the WT sequence for the documented mutation.
-6. Introduce the documented c.929C>G substitution.
-7. Translate the documented mutant CDS.
-8. Compare the WT and documented mutant sequences.
-9. Create a separate artificial mutation from the WT sequence.
-10. Translate the artificial mutant CDS.
-11. Compare the WT, documented mutant, and artificial mutant proteins.
-12. Use UCSC Genome Browser to examine the BCKDHA genomic region.
-13. Enable ClinVar and conservation tracks.
-14. Identify the documented variant in NCBI ClinVar.
-15. Return to UCSC using the GRCh38 genomic coordinate.
-16. Interpret the variant in relation to the BCKDHA gene structure.
-17. Document the findings and limitations.
+### Figure 3. ClinVar Track
+
+![Figure 3. ClinVar track](Image/03_ClinVar_track.png)
+
+This figure shows the **ClinVar Short Nucleotide Variants** track within the BCKDHA genomic region. The track displays clinically reported small nucleotide variants at different positions. Enabling this track allowed the BCKDHA region to be examined for variants that have been submitted to ClinVar and provided a way to connect the gene region with clinically reported genetic variation.
+
+
+### Figure 4. BCKDHA Conservation
+
+![Figure 4. BCKDHA conservation](Image/04_Conservation.png)
+
+This figure shows the **UCSC 100 Vertebrates** conservation track for the BCKDHA region. The basewise conservation and multispecies alignment tracks compare the human sequence with sequences from other vertebrates. The displayed alignment provides information about whether nucleotide positions in the region are conserved across species, which can provide additional context when examining a genetic variant.
 
 ---
 
-# 20. Required Screenshots
+# 5. Selected ClinVar Variant
 
-The repository contains the following UCSC and ClinVar evidence:
+The selected variant was:
 
-| Screenshot | Description |
+**NM_000709.4(BCKDHA):c.929C>G (p.Thr310Arg)**
+
+| Feature | Result |
 |---|---|
-| `01_gene_location.png` | BCKDHA gene location in UCSC |
-| `02_gene_structure.png` | BCKDHA exon-intron structure |
-| `03_tracks.png` | UCSC ClinVar and conservation tracks |
-| `04_ClinVar_Record.png` | Selected BCKDHA ClinVar record |
-| `05_variant_in_UCSC.png` | Selected variant located in UCSC |
+| ClinVar Variation ID | 2381 |
+| Variant | c.929C>G |
+| Protein change | p.Thr310Arg |
+| Molecular consequence | Missense |
+| GRCh38 position | chr19:41,422,704 |
+| Classification | Pathogenic/Likely pathogenic |
 
----
+### Figure 5. ClinVar Record
 
-# 21. Conclusion
+![Figure 5. ClinVar record](Image/04_ClinVar_Record.png)
 
-This analysis connected the BCKDHA gene, a clinically reported nucleotide variant, and its predicted protein consequence using several bioinformatics resources.
+ This figure shows the NCBI ClinVar record for **NM_000709.4(BCKDHA):c.929C>G (p.Thr310Arg)**. The record identifies the variant as a single-nucleotide variant with a missense molecular consequence and provides its genomic position on GRCh38. The ClinVar record also displays the reported clinical classification of **Pathogenic/Likely pathogenic** for this variant.
 
-The UCSC Genome Browser showed the physical location and structure of BCKDHA, including transcript models, clinical variant annotations, and conservation information. NCBI ClinVar provided the clinical record for **NM_000709.4:c.929C>G (p.Thr310Arg)** and allowed the variant to be connected to its genomic coordinate.
-
-The Galaxy analysis showed that the documented mutation changes one nucleotide and produces a predicted amino-acid substitution without changing the protein length or reading frame. In contrast, the artificial mutation was synonymous and did not change the predicted amino-acid sequence.
-
-Overall, the activity demonstrated how a nucleotide-level change can be followed through the sequence-analysis workflow:
-
-**Gene → genomic position → nucleotide change → codon change → protein consequence → possible biological effect**
-
----
-
-# 22. References and Links
-
-### UCSC Genome Browser
-
-UCSC Genome Browser:  
-https://genome.ucsc.edu/
-
-UCSC Genome Browser Tutorials:  
-https://genome.ucsc.edu/docs/tutorials/
-
-UCSC Genome Browser 101 Tutorial:  
-https://genome.ucsc.edu/docs/tutorials/gb101.html
-
-### NCBI
-
-NCBI BCKDHA Gene:  
-https://www.ncbi.nlm.nih.gov/gene/593
-
-NCBI ClinVar:  
-https://www.ncbi.nlm.nih.gov/clinvar/
-
-Selected ClinVar Variant — Variation ID 2381:  
+ClinVar:  
 https://www.ncbi.nlm.nih.gov/clinvar/variation/2381/
 
-### Disease Information
+---
 
-MedlinePlus Genetics — BCKDHA:  
-https://medlineplus.gov/genetics/gene/bckdha/
+# 6. Variant Located in UCSC
 
-MedlinePlus Genetics — Maple Syrup Urine Disease:  
-https://medlineplus.gov/genetics/condition/maple-syrup-urine-disease/
+The ClinVar variant was located in UCSC using the GRCh38 position:
 
-GeneReviews — Maple Syrup Urine Disease:  
-https://www.ncbi.nlm.nih.gov/books/NBK1319/
+**chr19:41,422,704**
+
+The position is within the BCKDHA coding region and corresponds to the **T310** position of the protein. The UCSC view also shows the BCKDHA gene model, ClinVar information, and conservation tracks.
+
+### Figure 6. BCKDHA c.929C>G in UCSC
+
+![Figure 6. Variant in UCSC](Image/05_variant_in_UCSC.png)
+
+This figure shows the BCKDHA genomic region at **GRCh38 chr19:41,422,704**, the genomic position corresponding to the selected ClinVar variant. The BCKDHA transcript, ClinVar annotation, and conservation tracks are visible in the same browser view. The position corresponds to the region associated with **T310** in the BCKDHA protein, supporting the connection between the genomic variant **c.929C>G** and the reported protein change **p.Thr310Arg**.
+---
+
+# 7. Interpretation
+
+### Where is the variant located?
+
+The variant is located within the **BCKDHA gene** on chromosome 19 at GRCh38 position **chr19:41,422,704**.
+
+### Is it coding or non-coding?
+
+The variant is located in the **coding region** because ClinVar reports the protein consequence **p.Thr310Arg** and classifies it as a missense variant.
+
+### How might it affect the protein?
+
+The c.929C>G substitution changes **ACA to AGA**, replacing threonine with arginine at position 310. The protein remains 445 amino acids long, but the amino-acid substitution could affect protein structure, stability, interactions, or activity.
+
+### What additional evidence is needed?
+
+Additional clinical, genetic, biochemical, and functional evidence would be needed to determine the full effect of the variant on BCKDHA function and MSUD.
 
 ---
 
-# 23. Final Submission Checklist
+# 8. Reflection
 
-- [x] GitHub repository
-- [x] README.md
-- [x] Assigned gene: BCKDHA
-- [x] Associated disease: Maple Syrup Urine Disease (MSUD)
+### 1. What did UCSC show that was not obvious from simply reading about BCKDHA?
+
+UCSC showed the physical organization of BCKDHA, including its genomic location, transcript structure, clinical variants, and conservation across species. These details are not obvious from simply reading about the gene's function.
+
+### 2. Why is the exact genomic location useful?
+
+The exact location allows a variant to be connected to a specific gene, transcript, coding region, and other genomic annotations. It also makes it possible to compare the variant with known clinical and conservation information.
+
+### 3. What is one limitation of predicting a variant's effect only from its location?
+
+Genomic location alone cannot show exactly how a mutation affects protein structure or biological activity. Functional and clinical evidence are needed to determine its actual effect.
+
+### 4. What was the most interesting feature of BCKDHA?
+
+An interesting feature was that UCSC allowed the BCKDHA gene structure, ClinVar variants, and conservation information to be viewed together. This made it possible to connect the selected nucleotide variant with its location in the gene.
+
+---
+
+# 9. Conclusion
+
+The analysis demonstrated how a DNA mutation can be followed from its genomic location to its predicted protein consequence.
+
+The documented **BCKDHA c.929C>G** variant changes **ACA to AGA**, producing the predicted **T310R** amino-acid substitution. The artificial **c.303G>A** mutation changes **AAG to AAA** but remains synonymous because both codons encode lysine.
+
+The UCSC Genome Browser and ClinVar provided genomic and clinical context for the documented variant, while Galaxy and SeqKit were used to analyze the sequence and predicted protein consequences.
+
+---
+
+# 10. Galaxy History
+
+**Galaxy History:** `Deguit_MSUD_BCKDHA_Mutation_Lab`
+
+| File | Purpose |
+|---|---|
+| `MSUD_CDS.fasta.txt` | WT BCKDHA CDS |
+| `MSUD_protein.fasta` | WT protein |
+| `MSUD_BCKDHA_c929C_G_mutant.fasta` | Documented mutant CDS |
+| `MSUD_mutant_protein.fasta` | Documented mutant protein |
+| `MSUD_BCKDHA_artificial_c303G_A.fasta` | Artificial mutant CDS |
+| `MSUD_artificial_mutant_protein.fasta` | Artificial mutant protein |
+
+---
+
+# 11. References
+
+- NCBI BCKDHA Gene  
+  https://www.ncbi.nlm.nih.gov/gene/593
+
+- NCBI ClinVar  
+  https://www.ncbi.nlm.nih.gov/clinvar/variation/2381/
+
+- MedlinePlus Genetics — BCKDHA  
+  https://medlineplus.gov/genetics/gene/bckdha/
+
+- MedlinePlus Genetics — Maple Syrup Urine Disease  
+  https://medlineplus.gov/genetics/condition/maple-syrup-urine-disease/
+
+- GeneReviews — Maple Syrup Urine Disease  
+  https://www.ncbi.nlm.nih.gov/books/NBK1319/
+
+- UCSC Genome Browser  
+  https://genome.ucsc.edu/
+
+---
+
+## Submission Checklist
+
 - [x] WT CDS
 - [x] WT protein
 - [x] Documented mutant CDS
 - [x] Documented mutant protein
 - [x] Artificial mutant CDS
 - [x] Artificial mutant protein
-- [x] WT-mutant comparison/alignment
-- [x] UCSC gene location evidence
-- [x] UCSC gene structure evidence
-- [x] UCSC ClinVar/conservation evidence
-- [x] NCBI ClinVar record evidence
-- [x] Selected variant located back in UCSC
-- [x] Interpretation questions
-- [x] Reflection questions
-- [x] References and links
-- [x] Galaxy history evidence
-
----
-
-## Galaxy History
-
-Galaxy history used for the sequence analysis:
-
-`Deguit_MSUD_BCKDHA_Mutation_Lab`
+- [x] Sequence comparison
+- [x] UCSC gene location
+- [x] UCSC gene structure
+- [x] ClinVar track
+- [x] Conservation track
+- [x] ClinVar record
+- [x] Variant location in UCSC
+- [x] Interpretation
+- [x] Reflection
+- [x] References
